@@ -1,17 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <header>
+        <HeaderNavbar />
+      </header>
+      <section>
+        <div class="row">
+          <div class="col-3">
+            <SearchForm />
+          </div>
+          <div class="col-9">
+            <ArticlesDisplay />
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import HeaderNavbar from './components/HeaderNavbar.vue'
+import SearchForm from './components/SearchForm.vue'
+import ArticlesDisplay from './components/ArticlesDisplay.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderNavbar,
+    SearchForm,
+    ArticlesDisplay
   }
 }
 </script>
