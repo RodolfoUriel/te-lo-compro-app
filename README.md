@@ -1,24 +1,24 @@
-# telocompro
+# APP Te Lo Compro
 
-## Project setup
+**Project setup**
+
+1. Instalar npm para generar los node_modules
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
+2. Ejecutar el script para construir la aplicación
 ```
 npm run build
 ```
-
-### Lints and fixes files
+2. Instalar un servidor virtual
 ```
-npm run lint
+npm install serve
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+2. Ejecutar la aplicación en el servidor virtual
+```
+serve -s dist
+```
+3. Se accede a la aplicación
+```
+http://localhost:5000
+```
