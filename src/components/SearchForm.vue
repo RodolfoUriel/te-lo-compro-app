@@ -24,7 +24,7 @@
       v-model="categoria"
     >
       <option value="">Seleccione una categoría...</option>
-      <option v-for="categoria in categorias" :key="categoria.id" :value="categoria.name">{{ categoria.name }}</option>
+      <option v-for="c in categorias" :key="c.id" :value="c.name">{{ c.name }}</option>
     </select>
   </div>
   <div class="form-group">
@@ -58,6 +58,7 @@
 </form>
 </template>
 <script>
+import axios from "axios"
 export default {
     name: 'SearchForm',
     data() {
@@ -66,26 +67,26 @@ export default {
         "categoria": "",
         "preciobase": "",
         "preciotope": "",
-        "categorias": [
-          {
-            "id": 1,
-            "name": "CARRO"
-          },
-          {
-            "id": 2,
-            "name": "CASA"
-          },
-          {
-            "id": 3,
-            "name": "VARIOS"
-          }
-        ]
+        "categorias": null
       }
     },
     computed: {
       checkArticulo() {
         return this.articulo.length > 2 ? true : false
       }
+    },
+    methods: {
+      async getCategorias() {
+        try {
+          let categorias = await axios.get('http://localhost:8080/api/v1/categories/')
+          this.categorias = categorias.data.categories  
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    },
+    created() {
+      this.getCategorias()
     }
 }
 </script>
