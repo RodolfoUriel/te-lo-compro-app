@@ -10,15 +10,15 @@ npm install
 ```
 npm run build
 ```
-2. Instalar un servidor virtual
+3. Instalar un servidor virtual
 ```
 npm install serve
 ```
-2. Ejecutar la aplicación en el servidor virtual
+4. Ejecutar la aplicación en el servidor virtual
 ```
 serve -s dist
 ```
-3. Se accede a la aplicación
+5. Se accede a la aplicación
 ```
 http://localhost:5000
 ```
